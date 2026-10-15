@@ -193,24 +193,46 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', calculateEngine);
     });
 
-    // 9. PDF EXECUTIVE BRIEF EXPORT HANDLER
+// 9. PDF EXECUTIVE BRIEF EXPORT HANDLER (Clean Corporate Document)
     exportBtn.addEventListener('click', () => {
         exportBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating Brief...';
-        
-        const element = document.getElementById('report-content');
+
+        // 1. Sync live calculator values into the hidden PDF template
+        document.getElementById('pdf-val-rev').textContent = displays.revenue.textContent;
+        document.getElementById('pdf-val-dist').textContent = displays.distance.textContent + ' km';
+        document.getElementById('pdf-val-fuel').textContent = 'R ' + parseFloat(inputs.dieselPrice.value).toFixed(2) + '/L (' + inputs.consumption.value + 'L/100km)';
+        document.getElementById('pdf-val-tolls').textContent = displays.tolls.textContent + ' | ' + displays.driver.textContent + '/day';
+
+        document.getElementById('pdf-res-cost').textContent = kpis.totalCost.textContent;
+        document.getElementById('pdf-res-cpk').textContent = kpis.costPerKm.textContent;
+        document.getElementById('pdf-res-profit').textContent = kpis.netProfit.textContent;
+        document.getElementById('pdf-res-margin').textContent = kpis.marginPct.textContent;
+
+        document.getElementById('pdf-risk-title').textContent = 'AUDIT STATUS: ' + document.getElementById('alert-status-title').textContent;
+        document.getElementById('pdf-risk-desc').textContent = document.getElementById('alert-description').textContent;
+
+        // Set current date string
+        const optionsDate = { year: 'numeric', month: 'short', day: 'numeric' };
+        document.getElementById('pdf-date').textContent = 'Date: ' + new Date().toLocaleDateString('en-ZA', optionsDate);
+
+        // 2. Select template element
+        const element = document.getElementById('pdf-export-template');
+        element.style.display = 'block'; // Temporarily make it visible for capture
+
         const opt = {
             margin:       10,
             filename:     'Route_Profitability_Executive_Brief.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2, useCORS: true, backgroundColor: '#090d16' },
+            html2canvas:  { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
+        // 3. Generate PDF and hide template again
         html2pdf().from(element).set(opt).save().then(() => {
+            element.style.display = 'none';
             exportBtn.innerHTML = '<i class="fa-solid fa-file-pdf"></i> Export Executive Brief';
         });
     });
-
     // Run calculation on initial load
     calculateEngine();
 });
