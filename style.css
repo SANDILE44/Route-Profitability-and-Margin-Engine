@@ -1,33 +1,32 @@
 /* ==========================================================================
-   ROUTE PROFITABILITY & MARGIN ENGINE - ENTERPRISE GLASSMORPHISM STYLESHEET
+   ROUTE PROFITABILITY & MARGIN ENGINE - POLISHED ENTERPRISE STYLESHEET
    Architect: Sandile Thabede (Sandile SystemsWorks)
    ========================================================================== */
 
 /* 1. ROOT DESIGN SYSTEM VARIABLES */
 :root {
-    --bg-dark: #090d16;
-    --card-bg: rgba(16, 24, 39, 0.75);
+    --bg-dark: #070a12;
+    --card-bg: rgba(13, 19, 33, 0.85);
     --card-border: rgba(255, 255, 255, 0.08);
-    --card-border-glow: rgba(0, 255, 204, 0.25);
+    --card-border-glow: rgba(0, 255, 204, 0.3);
     
     --accent-green: #00ffcc;
     --accent-blue: #0088ff;
     --accent-yellow: #ffb703;
     --accent-red: #ff3366;
     
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
-    --text-muted: #6b7280;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
     
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     
-    --radius-lg: 16px;
+    --radius-lg: 14px;
     --radius-md: 10px;
     --radius-sm: 6px;
     
-    --shadow-glow: 0 0 25px rgba(0, 255, 204, 0.15);
-    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.2s ease-in-out;
 }
 
 /* 2. GLOBAL RESET & BASE STYLES */
@@ -40,14 +39,14 @@
 body {
     background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(at 0% 0%, rgba(0, 136, 255, 0.12) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(0, 255, 204, 0.08) 0px, transparent 50%);
+        radial-gradient(circle at 10% 10%, rgba(0, 136, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(0, 255, 204, 0.06) 0%, transparent 40%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font-main);
-    line-height: 1.5;
+    line-height: 1.4;
     min-height: 100vh;
-    padding: 20px;
+    padding: 24px 16px;
     display: flex;
     justify-content: center;
 }
@@ -55,19 +54,19 @@ body {
 /* 3. APP CONTAINER */
 .app-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1320px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 /* 4. HEADER BAR */
 .app-header {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
-    padding: 20px 28px;
+    padding: 20px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,40 +77,40 @@ body {
 .brand {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
 }
 
 .brand-icon {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--accent-green);
-    background: rgba(0, 255, 204, 0.1);
+    background: rgba(0, 255, 204, 0.08);
     padding: 12px;
     border-radius: var(--radius-md);
     border: 1px solid rgba(0, 255, 204, 0.2);
 }
 
 .brand h1 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     color: #fff;
 }
 
 .subtitle {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
 }
 
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
 }
 
 .system-status {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.72rem;
+    background: rgba(255, 255, 255, 0.03);
     padding: 6px 12px;
     border-radius: 20px;
     border: 1px solid var(--card-border);
@@ -122,11 +121,11 @@ body {
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     background-color: var(--accent-green);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--accent-green);
+    box-shadow: 0 0 6px var(--accent-green);
     animation: pulse 2s infinite;
 }
 
@@ -138,12 +137,12 @@ body {
 
 .btn-export {
     background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
-    color: #000;
+    color: #05070c;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     border: none;
     border-radius: var(--radius-md);
-    padding: 10px 18px;
+    padding: 9px 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -152,15 +151,16 @@ body {
 }
 
 .btn-export:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 255, 204, 0.3);
 }
 
 /* 5. MAIN DASHBOARD GRID */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 420px 1fr;
-    gap: 24px;
+    grid-template-columns: 380px 1fr;
+    gap: 20px;
+    align-items: start;
 }
 
 @media (max-width: 1024px) {
@@ -173,12 +173,12 @@ body {
 .panel {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
-    padding: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .panel-header {
@@ -186,35 +186,36 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--card-border);
-    padding-bottom: 12px;
+    padding-bottom: 10px;
 }
 
 .panel-header h2 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: #fff;
 }
 
 .panel-header h2 i {
     color: var(--accent-green);
+    font-size: 0.9rem;
 }
 
 .badge {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-family: var(--font-mono);
     text-transform: uppercase;
-    background: rgba(0, 255, 204, 0.1);
+    background: rgba(0, 255, 204, 0.08);
     color: var(--accent-green);
     border: 1px solid rgba(0, 255, 204, 0.2);
-    padding: 3px 8px;
+    padding: 2px 6px;
     border-radius: 4px;
 }
 
 .badge.secondary {
-    background: rgba(0, 136, 255, 0.1);
+    background: rgba(0, 136, 255, 0.08);
     color: var(--accent-blue);
     border-color: rgba(0, 136, 255, 0.2);
 }
@@ -223,29 +224,30 @@ body {
 .controls-form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .form-group label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
 }
 
 .val-display {
     font-family: var(--font-mono);
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 0.78rem;
     color: var(--accent-green);
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2px 8px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2px 6px;
     border-radius: 4px;
     border: 1px solid var(--card-border);
 }
@@ -263,27 +265,26 @@ input[type=range]:focus {
 
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 6px;
+    height: 5px;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 3px;
-    transition: var(--transition);
 }
 
 input[type=range]::-webkit-slider-thumb {
-    height: 18px;
-    width: 18px;
+    height: 16px;
+    width: 16px;
     border-radius: 50%;
     background: var(--accent-green);
     cursor: pointer;
     -webkit-appearance: none;
-    margin-top: -6px;
-    box-shadow: 0 0 10px var(--accent-green);
+    margin-top: -5px;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
     transition: var(--transition);
 }
 
 input[type=range]:hover::-webkit-slider-thumb {
-    transform: scale(1.2);
+    transform: scale(1.15);
     background: #fff;
 }
 
@@ -291,99 +292,100 @@ input[type=range]:hover::-webkit-slider-thumb {
 .display-section {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .kpi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
 }
 
 .kpi-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(12px);
-    border-radius: var(--radius-lg);
-    padding: 20px;
+    backdrop-filter: blur(16px);
+    border-radius: var(--radius-md);
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     transition: var(--transition);
 }
 
 .kpi-card:hover {
     border-color: var(--card-border-glow);
-    transform: translateY(-2px);
 }
 
 .kpi-card.highlight {
     border-color: rgba(0, 255, 204, 0.3);
-    background: linear-gradient(180deg, rgba(16, 24, 39, 0.85) 0%, rgba(0, 255, 204, 0.05) 100%);
+    background: linear-gradient(180deg, rgba(13, 19, 33, 0.9) 0%, rgba(0, 255, 204, 0.04) 100%);
 }
 
 .kpi-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
 }
 
 .kpi-title i {
     color: var(--text-muted);
+    font-size: 0.75rem;
 }
 
 .kpi-value {
     font-family: var(--font-mono);
-    font-size: 1.6rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: #fff;
 }
 
 .kpi-sub {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
 }
 
 /* 9. AUTOMATED RISK ALERT BOX */
 .alert-panel {
-    border-left: 4px solid var(--accent-blue);
-    transition: var(--transition);
+    border-left: 3px solid var(--accent-blue);
+    padding: 18px 20px;
+    gap: 12px;
 }
 
 .alert-panel.status-optimal {
     border-left-color: var(--accent-green);
-    background: linear-gradient(90deg, rgba(0, 255, 204, 0.08) 0%, var(--card-bg) 100%);
+    background: linear-gradient(90deg, rgba(0, 255, 204, 0.06) 0%, var(--card-bg) 100%);
 }
 
 .alert-panel.status-warning {
     border-left-color: var(--accent-yellow);
-    background: linear-gradient(90deg, rgba(255, 183, 3, 0.08) 0%, var(--card-bg) 100%);
+    background: linear-gradient(90deg, rgba(255, 183, 3, 0.06) 0%, var(--card-bg) 100%);
 }
 
 .alert-panel.status-critical {
     border-left-color: var(--accent-red);
-    background: linear-gradient(90deg, rgba(255, 51, 102, 0.08) 0%, var(--card-bg) 100%);
+    background: linear-gradient(90deg, rgba(255, 51, 102, 0.06) 0%, var(--card-bg) 100%);
 }
 
 .alert-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .alert-title-wrap {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
 }
 
 #alert-icon {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--accent-blue);
 }
 
@@ -392,37 +394,37 @@ input[type=range]:hover::-webkit-slider-thumb {
 .status-critical #alert-icon { color: var(--accent-red); }
 
 #alert-status-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #fff;
 }
 
 #alert-status-sub {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
 }
 
 .status-tag {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text-primary);
     border: 1px solid var(--card-border);
 }
 
 .alert-body p {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* 10. CHART PANEL */
 .chart-wrapper {
     position: relative;
-    height: 260px;
+    height: 220px;
     width: 100%;
 }
 
@@ -431,18 +433,18 @@ input[type=range]:hover::-webkit-slider-thumb {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
-    padding: 16px 24px;
+    padding: 14px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 .tech-stack {
     font-family: var(--font-mono);
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
